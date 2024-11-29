@@ -1,0 +1,212 @@
+/* Reset básico de margens e preenchimento para garantir consistência entre os navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo fonte padrão e fundo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Cinza claro */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #2980b9; /* Azul médio */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+/* Barra lateral */
+#sidebar {
+    width: 250px;
+    background-color: #2c3e50; /* Azul escuro */
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+}
+
+#sidebar nav a {
+    display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    text-align: center;
+    border-bottom: 1px solid #34495e; /* Azul mais suave */
+}
+
+#sidebar nav a:hover {
+    background-color: #34495e; /* Azul mais suave no hover */
+}
+
+/* Conteúdo principal */
+#content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+/* Modal de Contato */
+.modal {
+    display: none; /* Modal escondido inicialmente */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    overflow: auto;
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    max-height: 80%; /* Limitar a altura do modal */
+    overflow-y: auto;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo do formulário de contato */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 5px 0;
+    font-weight: bold;
+    color: #34495e;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #3498db;
+}
+
+/* Estilo do botão de contato flutuante */
+.contact-btn {
+    position: fixed;
+    bottom: 80px;
+    right: 30px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #3498db;
+}
+
+/* Rodapé */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Estilo para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        margin: 10px;
+    }
+
+    #content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    #sidebar {
+        width: 200px;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    /* Ajustes para o botão de contato */
+    .contact-btn {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    /* Ajustes para o formulário */
+    form {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    input, textarea {
+        font-size: 1rem;
+    }
+}
